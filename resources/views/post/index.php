@@ -25,10 +25,11 @@
             <td><?php echo $post->title ?></td>
             <td><?php echo $post->details ?></td>
             <td>
-                <a href="<?php echo url('post/edit/'.$post->id) ?>">Edit</a>
-                <form action="<?php echo url('post/delete',$post->id)?php>"method="post">
-                <input type="hidden" name="_method" value="delete">
-                <button>Delete</buttton>
+                <a href="<?php echo url('post/edit',$post->id) ?>">Edit</a>
+                <form action="<?php echo url('post/delete',$post->id)?>" method="post">
+
+                    <input type="hidden" name="_method" value="delete">
+                <button>Delete</button>
             </td>
         </tr>
     <?php } ?>

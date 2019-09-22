@@ -23,15 +23,15 @@ class PostController extends Controller
     {
         $data['title'] = $request->title;
         $data['details'] = $request->details;
-        DB::table('posts')->insert($data)
-        return redirect('past/create');
+        DB::table('posts')->insert($data);
+        return redirect('post/create');
       //  return view('post/create');
     }
     public function edit($id)
     {
    $data['post'] =DB::table('posts')->where('id',$id)->first();
 
-   return view('post/edit',compact('data'));
+   return view('post/edit',$data);
     }
     public function update(Request $request,$id)
     {
@@ -40,10 +40,10 @@ class PostController extends Controller
         DB::table('posts')->where('id',$id)->update($data);
         return redirect('posts');
     }
- //   public function destory($id)
- //   {
-     //   DB::table('posts')->where('id',$id)->delete();
-      //  return redirect('posts');
-   // }
+    public function destory($id)
+    {
+         DB::table('posts')->where('id',$id)->delete();
+        return redirect('posts');
+    }
 
 }

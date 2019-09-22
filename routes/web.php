@@ -15,8 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('posts','postcontroller@index');
-Route::get('post/create','testController@create');
+Route::get('post/create','postController@create');
 Route::post('post/store','postcontroller@store');
 Route::get('post/edit/{id}','postcontroller@edit');
 Route::put('post/update/{id}','postcontroller@update');
- //Route::delete('post/update/{id}','postcontroller@destory');
+Route::delete('post/update/{id}','postcontroller@destory');
+
+
+

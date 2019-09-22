@@ -11,15 +11,13 @@
 <h1>Update post</h1>
 <form action="<?php echo url('post/update',$post->id) ?>"method="post">
     <?php echo csrf_field(); ?>
-    <input  type="text" name="_method" value="PUT">
+    <input hidden type="text"name="_method"value="PUT">
     <input type="text"name="title" value="<?php echo $post->title ?>" placeholder="Title">
     <br>
     <br>
-    <textarea name="details" id="" cols="30" rows="10" placeholder="Details">
-        <?php echo $post->details ?>
-    </textarea>
+    <textarea name="details" id="" cols="30" rows="10" placeholder="Details"><?php echo $post->details ?></textarea>
     <br>
-    <button>submit</button>
+    <button>Update</button>
 
 </form>
 </body>
